@@ -33,32 +33,18 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int page1=0x7f020001;
-        public static final int page10=0x7f020002;
-        public static final int page11=0x7f020003;
-        public static final int page12=0x7f020004;
-        public static final int page13=0x7f020005;
-        public static final int page14=0x7f020006;
-        public static final int page15=0x7f020007;
-        public static final int page16=0x7f020008;
-        public static final int page17=0x7f020009;
-        public static final int page2=0x7f02000a;
-        public static final int page3=0x7f02000b;
-        public static final int page4=0x7f02000c;
-        public static final int page5=0x7f02000d;
-        public static final int page6=0x7f02000e;
-        public static final int page7=0x7f02000f;
-        public static final int page8=0x7f020010;
-        public static final int page9=0x7f020011;
+        public static final int page5=0x7f020001;
     }
     public static final class id {
-        public static final int action_settings=0x7f090003;
+        public static final int action_settings=0x7f090004;
         public static final int dummy_button=0x7f090002;
         public static final int fullscreen_content_controls=0x7f090001;
+        public static final int tvFragFirst=0x7f090003;
         public static final int view_pager=0x7f090000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
+        public static final int fragment_page=0x7f030001;
     }
     public static final class menu {
         public static final int main=0x7f080000;
