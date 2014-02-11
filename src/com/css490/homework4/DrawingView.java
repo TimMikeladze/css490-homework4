@@ -1,20 +1,18 @@
-
 package com.css490.homework4;
 
 import android.content.Context;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Path;
+import android.graphics.drawable.BitmapDrawable;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
-import android.widget.Toast;
 
 public class DrawingView extends View {
-	
+
 	//drawing path
 	private Path drawPath;
 	//drawing and canvas paint
@@ -25,15 +23,16 @@ public class DrawingView extends View {
 	private Canvas drawCanvas;
 	//canvas bitmap
 	private Bitmap canvasBitmap;
-	
+    private BitmapDrawable bd;
+
 	public DrawingView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		setupDrawing();
 	}
-	
+
 	//setup drawing
 	private void setupDrawing() {
-		
+
 		//prepare for drawing and setup paint stroke properties
 		drawPath = new Path();
 		drawPaint = new Paint();
@@ -44,30 +43,28 @@ public class DrawingView extends View {
 		drawPaint.setStrokeJoin(Paint.Join.ROUND);
 		drawPaint.setStrokeCap(Paint.Cap.ROUND);
 		canvasPaint = new Paint(Paint.DITHER_FLAG);
-		
-		BitmapFactory.Options options = new BitmapFactory.Options();
-		options.inJustDecodeBounds = true;
-		canvasBitmap = Bitmap.createScaledBitmap(src, 200, 200, null);
-		
-		Toast.makeText(getContext(), canvasBitmap.getHeight(), Toast.LENGTH_LONG)
-				.show();
+
 	}
-	
+
 	//size assigned to view
 	@Override
 	protected void onSizeChanged(int w, int h, int oldw, int oldh) {
 		super.onSizeChanged(w, h, oldw, oldh);
-		//		canvasBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
-		drawCanvas = new Canvas();
+		//canvasBitmap = Bitmap.createBitmap(w, h, Bitmap.Config.ARGB_8888);
+
+		bd = (BitmapDrawable) getResources().getDrawable(R.drawable.ic_launcher);
+		canvasBitmap = bd.getBitmap().copy(Bitmap.Config.ARGB_8888, true);
+
+		drawCanvas = new Canvas(canvasBitmap);
 	}
-	
+
 	//draw the view - will be called after touch event
 	@Override
 	protected void onDraw(Canvas canvas) {
 		canvas.drawBitmap(canvasBitmap, 0, 0, canvasPaint);
 		canvas.drawPath(drawPath, drawPaint);
 	}
-	
+
 	//register user touches as drawing action
 	@Override
 	public boolean onTouchEvent(MotionEvent event) {
@@ -92,9 +89,9 @@ public class DrawingView extends View {
 		//redraw
 		invalidate();
 		return true;
-		
+
 	}
-	
+
 	//update color
 	public void setColor(String newColor) {
 		invalidate();
