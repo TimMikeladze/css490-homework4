@@ -13,8 +13,6 @@ public class MainActivity extends FragmentActivity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		//getWindow().requestFeature(Window.FEATURE_NO_TITLE);
-		//getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
 
 		setContentView(R.layout.activity_main);
 		viewPager = (ViewPager) findViewById(R.id.view_pager);
@@ -25,7 +23,8 @@ public class MainActivity extends FragmentActivity {
 	}
 
 	private void addPages() {
-		pageFragmentAdapter.addFragment(PageFragment.instantiate(this, PageFragment.class.getName()));
+		pageFragmentAdapter.addFragment(PageFragmentOne.instantiate(this, PageFragmentOne.class.getName()));
+		pageFragmentAdapter.addFragment(PageFragmentOne.instantiate(this, PageFragmentTwo.class.getName()));
 		viewPager.setAdapter(pageFragmentAdapter);
 	}
 }
