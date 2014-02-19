@@ -3,7 +3,6 @@ package com.css490.homework4;
 
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
-import android.support.v4.view.ViewPager;
 import android.support.v4.view.ViewPager.OnPageChangeListener;
 import android.view.Window;
 import android.view.WindowManager;
@@ -11,10 +10,11 @@ import android.view.WindowManager;
 import com.css490.homework4.fragments.BookPageFragmentCreator;
 import com.css490.homework4.fragments.PageFragment;
 import com.css490.homework4.fragments.TitlePageFragment;
+import com.css490.homework4.view.BookViewPager;
 
-public class MainActivity extends FragmentActivity implements OnPageChangeListener {
+public class MainActivity extends FragmentActivity implements OnPageChangeListener, ToolbarCallbacks {
 
-	private ViewPager viewPager;
+	private BookViewPager viewPager;
 	private PageFragmentAdapter pageFragmentAdapter;
 
 	@Override
@@ -25,7 +25,7 @@ public class MainActivity extends FragmentActivity implements OnPageChangeListen
 
 		setContentView(R.layout.activity_main);
 
-		viewPager = (ViewPager) findViewById(R.id.view_pager);
+		viewPager = (BookViewPager) findViewById(R.id.view_pager);
 		viewPager.setOnPageChangeListener(this);
 		onPageSelected(0);
 
@@ -36,17 +36,17 @@ public class MainActivity extends FragmentActivity implements OnPageChangeListen
 
 	private void addPages() {
 		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, TitlePageFragment.class, R.drawable.page1));
-		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page2));
-		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page3));
-		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page4));
-		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page5));
-		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page6));
-		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page7));
-		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page8));
-		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page9));
-		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page10));
-		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page11));
-		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page12));
+		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page2, this));
+		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page3, this));
+		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page4, this));
+		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page5, this));
+		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page6, this));
+		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page7, this));
+		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page8, this));
+		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page9, this));
+		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page10, this));
+		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page11, this));
+		pageFragmentAdapter.addFragment(BookPageFragmentCreator.instantiate(this, PageFragment.class, R.drawable.page12, this));
 
 		viewPager.setAdapter(pageFragmentAdapter);
 
@@ -58,11 +58,18 @@ public class MainActivity extends FragmentActivity implements OnPageChangeListen
 
 	@Override
 	public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+
 	}
 
 	@Override
 	public void onPageSelected(int position) {
+
 	}
+
+    @Override
+    public void toggleScroll(boolean scroll) {
+        viewPager.toggleScroll(scroll);
+    }
 
 
 }

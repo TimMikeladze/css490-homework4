@@ -10,6 +10,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.css490.homework4.R;
+import com.css490.homework4.ToolbarCallbacks;
 import com.css490.homework4.dialogs.ChooseColorDialog;
 import com.css490.homework4.dialogs.ChooseStrokeDialog;
 import com.css490.homework4.view.DrawingView;
@@ -25,6 +26,7 @@ public class PageFragment extends Fragment implements OnClickListener, DrawingCa
     private ChooseStrokeDialog chooseStrokeDialog;
 
     private boolean drawingEnabled;
+    private ToolbarCallbacks toolbarCallbacks;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
@@ -50,6 +52,10 @@ public class PageFragment extends Fragment implements OnClickListener, DrawingCa
         return v;
     }
 
+    public void addToolbarCallbacks(ToolbarCallbacks toolbarCallbacks) {
+        this.toolbarCallbacks = toolbarCallbacks;
+    }
+
     @Override
     public void onClick(View v) {
         if (v.getId() == drawButton.getId()) {
@@ -66,7 +72,11 @@ public class PageFragment extends Fragment implements OnClickListener, DrawingCa
     private void toggleDrawing() {
         drawingEnabled = !drawingEnabled;
         drawingView.enableDrawing(drawingEnabled);
+        if(toolbarCallbacks != null) {
+            toolbarCallbacks.toggleScroll(drawingEnabled);
+        }
         drawButton.setText(drawingEnabled ? "Draw on" : "Draw off");
+
     }
 
     private void selectStroke() {
