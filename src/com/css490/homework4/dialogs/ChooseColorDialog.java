@@ -20,7 +20,7 @@ public class ChooseColorDialog implements OnClickListener {
 		
 		AlertDialog.Builder builder = new AlertDialog.Builder(context);
 		
-		builder.setSingleChoiceItems(new CharSequence[] { "Red", "Green", "Blue", "Yellow", "Orange", "Brown", "Purple", "Pink", }, 0, this);
+		builder.setSingleChoiceItems(new CharSequence[] { "Red", "Green", "Blue", "Yellow", "Orange", "Brown", "Purple", "Pink", "Eraser" }, 0, this);
 		
 		dialog = builder.create();
 		
@@ -58,6 +58,9 @@ public class ChooseColorDialog implements OnClickListener {
 				break;
 			case 7:
 				drawingCallbacks.setColor(DrawingColors.PINK.getColor());
+				break;
+			case 8:
+				drawingCallbacks.setEraser(true);
 				break;
 		}
 		dialog.dismiss();
