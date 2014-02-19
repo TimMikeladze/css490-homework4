@@ -12,34 +12,4 @@
         android:gravity="center"
         android:keepScreenOn="true" />
 
-    <RelativeLayout
-        android:id="@+id/layout_toolbar"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:orientation="horizontal" >
-
-        <ToggleButton
-            android:id="@+id/button_draw"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_centerInParent="true"
-            android:text="Draw" />
-
-        <Button
-            android:id="@+id/button_color"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toLeftOf="@+id/button_draw"
-            android:text="Color" />
-
-        <Button
-            android:id="@+id/button_stroke"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_toRightOf="@+id/button_draw"
-            android:text="Stroke" />
-    </RelativeLayout>
-
 </RelativeLayout>
