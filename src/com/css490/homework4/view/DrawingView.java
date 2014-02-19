@@ -17,6 +17,7 @@ import com.css490.homework4.util.BitmapLoader;
 
 public class DrawingView extends View {
 
+    private static final int HEIGHT_OFFSET = 150;
     private Path drawPath;
     private Paint drawPaint, canvasPaint;
     private int paintColor = DrawingColors.RED.getColor();
@@ -61,14 +62,14 @@ public class DrawingView extends View {
 
     @Override
     protected void onSizeChanged(int width, int height, int oldWidth, int oldHeight) {
-        super.onSizeChanged(width, height, oldWidth, oldHeight);
+        super.onSizeChanged(width, height - HEIGHT_OFFSET, oldWidth, oldHeight);
 
         if (hasImage) {
-            canvasBitmap = BitmapLoader.loadBitmap(getResources(), imageID, metrics.widthPixels, metrics.heightPixels)
+            canvasBitmap = BitmapLoader.loadBitmap(getResources(), imageID, metrics.widthPixels, metrics.heightPixels - HEIGHT_OFFSET)
                                            .copy(Bitmap.Config.ARGB_8888, true);
         }
         else {
-            canvasBitmap = Bitmap.createBitmap(width, height, Bitmap.Config.ARGB_8888);
+            canvasBitmap = Bitmap.createBitmap(width, height - HEIGHT_OFFSET, Bitmap.Config.ARGB_8888);
         }
 
         drawCanvas = new Canvas(canvasBitmap);
