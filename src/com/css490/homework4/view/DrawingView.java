@@ -31,7 +31,6 @@ public class DrawingView extends View {
 	private boolean drawingEnabled;
 	private int paintColor = DrawingColors.RED.getColor();
 	private float stroke = DrawingStrokes.MEDIUM.getStroke();
-	private boolean eraserEnabled;
 	
 	public DrawingView(Context context, AttributeSet attrs) {
 		super(context, attrs);

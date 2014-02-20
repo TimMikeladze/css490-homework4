@@ -17,6 +17,8 @@ import com.css490.homework4.view.DrawingView;
 
 public class PageFragment extends Fragment implements OnClickListener, DrawingCallbacks {
 	
+	private static final String DRAWING_OFF = "Drawing off";
+	private static final String DRAWING_ON = "Drawing on";
 	private int imageID;
 	private DrawingView drawingView;
 	private Button drawButton;
@@ -30,7 +32,10 @@ public class PageFragment extends Fragment implements OnClickListener, DrawingCa
 	
 	@Override
 	public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-		View v = inflater.inflate(R.layout.fragment_page_generic, container, false);
+		Bundle bundle = getArguments();
+		
+		int layoutID = bundle != null && bundle.containsKey("layoutID") ? bundle.getInt("layoutID") : R.layout.fragment_page_generic;
+		View v = inflater.inflate(layoutID, container, false);
 		
 		drawButton = (Button) v.findViewById(R.id.button_draw);
 		drawButton.setOnClickListener(this);
@@ -42,12 +47,12 @@ public class PageFragment extends Fragment implements OnClickListener, DrawingCa
 		chooseColorDialog = new ChooseColorDialog(getActivity(), this);
 		chooseStrokeDialog = new ChooseStrokeDialog(getActivity(), this);
 		
-		Bundle bundle = getArguments();
 		if (bundle != null) {
 			imageID = bundle.getInt("imageID");
 			drawingView = (DrawingView) v.findViewById(R.id.view_drawing);
 			drawingView.setImage(imageID);
 		}
+		
 		return v;
 	}
 	
@@ -72,7 +77,7 @@ public class PageFragment extends Fragment implements OnClickListener, DrawingCa
 		if (toolbarCallbacks != null) {
 			toolbarCallbacks.toggleScroll(drawingEnabled);
 		}
-		drawButton.setText(drawingEnabled ? "Draw on" : "Draw off");
+		drawButton.setText(drawingEnabled ? DRAWING_ON : DRAWING_OFF);
 		
 	}
 	

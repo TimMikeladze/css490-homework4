@@ -25,7 +25,7 @@
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:checked="false"
-            android:text="Draw off" />
+            android:text="Drawing off" />
 
         <Button
             android:id="@+id/button_color"
