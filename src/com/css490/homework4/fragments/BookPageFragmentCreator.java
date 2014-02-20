@@ -14,7 +14,7 @@ public class BookPageFragmentCreator {
 	}
 	
 	public static Fragment instantiate(Context context, Class<?> c, int image, ToolbarCallbacks toolbarCallbacks) {
-		return instantiate(context, c, image, 0, null);
+		return instantiate(context, c, image, 0, toolbarCallbacks);
 		
 	}
 	
