@@ -17,15 +17,14 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
         android:orientation="horizontal" >
-
-        <Button
+  <Button
             android:id="@+id/button_draw"
             style="?android:attr/buttonStyleSmall"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerInParent="true"
             android:checked="false"
-             android:text="Drawing off" />
+            android:text="Drawing off" />
 
         <Button
             android:id="@+id/button_color"
@@ -33,7 +32,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toLeftOf="@+id/button_draw"
-            android:text="Color" />
+            android:text="Color"
+            android:visibility="invisible" />
 
         <Button
             android:id="@+id/button_stroke"
@@ -41,7 +41,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_toRightOf="@+id/button_draw"
-            android:text="Stroke" />
+            android:text="Stroke"
+            android:visibility="invisible" />
     </RelativeLayout>
 
     <ImageView
