@@ -19,8 +19,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int buttonBarStyle=0x7f010000;
     }
     public static final class color {
-        public static final int black_overlay=0x7f040000;
-        public static final int white=0x7f040001;
+        public static final int black_overlay=0x7f050000;
+        public static final int white=0x7f050001;
     }
     public static final class dimen {
         /**  Default screen margins, per the Android Design guidelines. 
@@ -29,8 +29,8 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
          screen margins) for sw720dp devices (e.g. 10" tablets) in landscape here.
     
          */
-        public static final int activity_horizontal_margin=0x7f050000;
-        public static final int activity_vertical_margin=0x7f050001;
+        public static final int activity_horizontal_margin=0x7f060000;
+        public static final int activity_vertical_margin=0x7f060001;
     }
     public static final class drawable {
         public static final int animation1=0x7f020000;
@@ -58,84 +58,97 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
         public static final int animation3007=0x7f020016;
         public static final int animation3008=0x7f020017;
         public static final int animation3009=0x7f020018;
-        public static final int animation4000=0x7f020019;
-        public static final int animation4001=0x7f02001a;
-        public static final int animation4002=0x7f02001b;
-        public static final int animation4003=0x7f02001c;
-        public static final int animation4004=0x7f02001d;
-        public static final int animation4005=0x7f02001e;
-        public static final int animation4006=0x7f02001f;
-        public static final int animation4007=0x7f020020;
-        public static final int animation4008=0x7f020021;
-        public static final int animation4009=0x7f020022;
-        public static final int animation4010=0x7f020023;
-        public static final int animation4011=0x7f020024;
-        public static final int animation4012=0x7f020025;
-        public static final int animation4013=0x7f020026;
-        public static final int animation4014=0x7f020027;
-        public static final int animation4015=0x7f020028;
-        public static final int animation4016=0x7f020029;
-        public static final int animation4017=0x7f02002a;
-        public static final int animation4018=0x7f02002b;
-        public static final int animation5000=0x7f02002c;
-        public static final int animation5001=0x7f02002d;
-        public static final int animation5002=0x7f02002e;
-        public static final int animation5003=0x7f02002f;
-        public static final int animation5004=0x7f020030;
-        public static final int animation5005=0x7f020031;
-        public static final int animation5006=0x7f020032;
-        public static final int animation5007=0x7f020033;
-        public static final int animation5008=0x7f020034;
-        public static final int animation5009=0x7f020035;
-        public static final int animation5010=0x7f020036;
-        public static final int ic_launcher=0x7f020037;
-        public static final int page1=0x7f020038;
-        public static final int page10=0x7f020039;
-        public static final int page11=0x7f02003a;
-        public static final int page12=0x7f02003b;
-        public static final int page13=0x7f02003c;
-        public static final int page14=0x7f02003d;
-        public static final int page15=0x7f02003e;
-        public static final int page16=0x7f02003f;
-        public static final int page17=0x7f020040;
-        public static final int page2=0x7f020041;
-        public static final int page3=0x7f020042;
-        public static final int page4=0x7f020043;
-        public static final int page5=0x7f020044;
-        public static final int page6=0x7f020045;
-        public static final int page7=0x7f020046;
-        public static final int page8=0x7f020047;
-        public static final int page9=0x7f020048;
+        public static final int animation4=0x7f020019;
+        public static final int animation4000=0x7f02001a;
+        public static final int animation4001=0x7f02001b;
+        public static final int animation4002=0x7f02001c;
+        public static final int animation4003=0x7f02001d;
+        public static final int animation4004=0x7f02001e;
+        public static final int animation4005=0x7f02001f;
+        public static final int animation4006=0x7f020020;
+        public static final int animation4007=0x7f020021;
+        public static final int animation4008=0x7f020022;
+        public static final int animation4009=0x7f020023;
+        public static final int animation4010=0x7f020024;
+        public static final int animation4011=0x7f020025;
+        public static final int animation4012=0x7f020026;
+        public static final int animation4013=0x7f020027;
+        public static final int animation4014=0x7f020028;
+        public static final int animation4015=0x7f020029;
+        public static final int animation4016=0x7f02002a;
+        public static final int animation4017=0x7f02002b;
+        public static final int animation4018=0x7f02002c;
+        public static final int animation5=0x7f02002d;
+        public static final int animation5000=0x7f02002e;
+        public static final int animation5001=0x7f02002f;
+        public static final int animation5002=0x7f020030;
+        public static final int animation5003=0x7f020031;
+        public static final int animation5004=0x7f020032;
+        public static final int animation5005=0x7f020033;
+        public static final int animation5006=0x7f020034;
+        public static final int animation5007=0x7f020035;
+        public static final int animation5008=0x7f020036;
+        public static final int animation5009=0x7f020037;
+        public static final int animation5010=0x7f020038;
+        public static final int animation6000=0x7f020039;
+        public static final int animation6001=0x7f02003a;
+        public static final int ic_launcher=0x7f02003b;
+        public static final int page1=0x7f02003c;
+        public static final int page10=0x7f02003d;
+        public static final int page11=0x7f02003e;
+        public static final int page12=0x7f02003f;
+        public static final int page13=0x7f020040;
+        public static final int page14=0x7f020041;
+        public static final int page15=0x7f020042;
+        public static final int page16=0x7f020043;
+        public static final int page17=0x7f020044;
+        public static final int page2=0x7f020045;
+        public static final int page3=0x7f020046;
+        public static final int page4=0x7f020047;
+        public static final int page5=0x7f020048;
+        public static final int page6=0x7f020049;
+        public static final int page7=0x7f02004a;
+        public static final int page8=0x7f02004b;
+        public static final int page9=0x7f02004c;
     }
     public static final class id {
-        public static final int action_settings=0x7f090008;
-        public static final int animation=0x7f090006;
-        public static final int button_about=0x7f090007;
-        public static final int button_color=0x7f090004;
-        public static final int button_draw=0x7f090003;
-        public static final int button_stroke=0x7f090005;
-        public static final int layout_toolbar=0x7f090002;
-        public static final int view_drawing=0x7f090001;
-        public static final int view_pager=0x7f090000;
+        public static final int action_settings=0x7f0a0008;
+        public static final int animation=0x7f0a0006;
+        public static final int button_about=0x7f0a0007;
+        public static final int button_color=0x7f0a0004;
+        public static final int button_draw=0x7f0a0003;
+        public static final int button_stroke=0x7f0a0005;
+        public static final int layout_toolbar=0x7f0a0002;
+        public static final int view_drawing=0x7f0a0001;
+        public static final int view_pager=0x7f0a0000;
     }
     public static final class layout {
         public static final int activity_main=0x7f030000;
-        public static final int fragment_page_17=0x7f030001;
-        public static final int fragment_page_2=0x7f030002;
-        public static final int fragment_page_8=0x7f030003;
-        public static final int fragment_page_generic=0x7f030004;
-        public static final int fragment_page_title=0x7f030005;
+        public static final int fragment_page_15=0x7f030001;
+        public static final int fragment_page_16=0x7f030002;
+        public static final int fragment_page_17=0x7f030003;
+        public static final int fragment_page_2=0x7f030004;
+        public static final int fragment_page_8=0x7f030005;
+        public static final int fragment_page_generic=0x7f030006;
+        public static final int fragment_page_title=0x7f030007;
     }
     public static final class menu {
-        public static final int main=0x7f080000;
+        public static final int main=0x7f090000;
+    }
+    public static final class raw {
+        public static final int sound1=0x7f040000;
+        public static final int sound2=0x7f040001;
+        public static final int sound3=0x7f040002;
+        public static final int sound4=0x7f040003;
+        public static final int sound5=0x7f040004;
     }
     public static final class string {
-        public static final int action_settings=0x7f060001;
-        public static final int app_name=0x7f060000;
-        public static final int dummy_button=0x7f060004;
-        public static final int dummy_content=0x7f060005;
-        public static final int hello_world=0x7f060002;
-        public static final int title_activity_main=0x7f060003;
+        public static final int action_settings=0x7f070001;
+        public static final int app_name=0x7f070000;
+        public static final int dummy_button=0x7f070004;
+        public static final int dummy_content=0x7f070005;
+        public static final int hello_world=0x7f070002;
+        public static final int title_activity_main=0x7f070003;
     }
     public static final class style {
         /** 
@@ -159,13 +172,13 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
     
  API 14 theme customizations can go here. 
          */
-        public static final int AppBaseTheme=0x7f070000;
+        public static final int AppBaseTheme=0x7f080000;
         /**  Application theme. 
  All customizations that are NOT specific to a particular API-level can go here. 
          */
-        public static final int AppTheme=0x7f070001;
-        public static final int FullscreenActionBarStyle=0x7f070003;
-        public static final int FullscreenTheme=0x7f070002;
+        public static final int AppTheme=0x7f080001;
+        public static final int FullscreenActionBarStyle=0x7f080003;
+        public static final int FullscreenTheme=0x7f080002;
     }
     public static final class styleable {
         /** 

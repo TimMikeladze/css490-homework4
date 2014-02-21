@@ -5,8 +5,22 @@ import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 
+/**
+ * A utilty class to handle optmized bitmap loading
+ * 
+ * @author Tim Mikeladze
+ */
 public class BitmapLoader {
 	
+	/**
+	 * Load a bitmap into memory given an id.
+	 * 
+	 * @param resources the resources
+	 * @param id the id of the bitmap
+	 * @param width the width of the bitmap
+	 * @param height the height of the bitmap
+	 * @return the bitmap
+	 */
 	public static Bitmap loadBitmap(Resources resources, int id, int width, int height) {
 		Bitmap bitmap;
 		BitmapFactory.Options options = new BitmapFactory.Options();
@@ -24,6 +38,15 @@ public class BitmapLoader {
 		return bitmap;
 	}
 	
+	/**
+	 * Calculate in sample size, used to speed up bitmap loading by having pre calculated
+	 * dimensions using powers of 2.
+	 * 
+	 * @param options the options
+	 * @param reqWidth the requested width
+	 * @param reqHeight the requested height
+	 * @return the sampling size
+	 */
 	private static int calculateInSampleSize(BitmapFactory.Options options, int reqWidth, int reqHeight) {
 		int height = options.outHeight;
 		int width = options.outWidth;

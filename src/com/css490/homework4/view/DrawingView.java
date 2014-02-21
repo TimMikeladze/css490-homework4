@@ -16,6 +16,11 @@ import android.view.WindowManager;
 
 import com.css490.homework4.util.BitmapLoader;
 
+/**
+ * A custom view to provide a drawing surface for the user to draw on.
+ * 
+ * @author Tim Mikeladze
+ */
 public class DrawingView extends View {
 	
 	private static final int HEIGHT_OFFSET = 150;
@@ -32,6 +37,12 @@ public class DrawingView extends View {
 	private int paintColor = DrawingColors.RED.getColor();
 	private float stroke = DrawingStrokes.MEDIUM.getStroke();
 	
+	/**
+	 * Instantiates a new drawing view.
+	 * 
+	 * @param context the context
+	 * @param attrs the attrs
+	 */
 	public DrawingView(Context context, AttributeSet attrs) {
 		super(context, attrs);
 		this.context = context;
@@ -40,12 +51,18 @@ public class DrawingView extends View {
 		setupDrawing();
 	}
 	
+	/**
+	 * Sets the dimensions object, used for optimized bitmap loading.
+	 */
 	private void setDimensions() {
 		Display display = ((WindowManager) context.getSystemService(Context.WINDOW_SERVICE)).getDefaultDisplay();
 		metrics = new DisplayMetrics();
 		display.getMetrics(metrics);
 	}
 	
+	/**
+	 * Intialize necessary objects for the drawing view.
+	 */
 	private void setupDrawing() {
 		
 		drawPath = new Path();
@@ -61,6 +78,9 @@ public class DrawingView extends View {
 	}
 	
 	@Override
+	/**
+	 * Called initially and when the size of the screen changes, instantiates new bitmaps and canvas
+	 */
 	protected void onSizeChanged(int width, int height, int oldWidth, int oldHeight) {
 		super.onSizeChanged(width, height - HEIGHT_OFFSET, oldWidth, oldHeight);
 		
@@ -76,12 +96,18 @@ public class DrawingView extends View {
 	}
 	
 	@Override
+	/**
+	 * Draws the user input
+	 */
 	protected void onDraw(Canvas canvas) {
 		canvas.drawBitmap(canvasBitmap, 0, 0, canvasPaint);
 		canvas.drawPath(drawPath, drawPaint);
 	}
 	
 	@Override
+	/**
+	 * Handles user drawing
+	 */
 	public boolean onTouchEvent(MotionEvent event) {
 		if (drawingEnabled) {
 			
@@ -110,28 +136,53 @@ public class DrawingView extends View {
 		
 	}
 	
+	/**
+	 * Sets the stroke.
+	 * 
+	 * @param stroke the new stroke
+	 */
 	public void setStroke(float stroke) {
 		this.stroke = stroke;
 		drawPaint.setStrokeWidth(stroke);
 	}
 	
+	/**
+	 * Sets the color.
+	 * 
+	 * @param color the new color
+	 */
 	public void setColor(int color) {
 		invalidate();
 		paintColor = color;
 		drawPaint.setColor(paintColor);
 	}
 	
+	/**
+	 * Sets the image.
+	 * 
+	 * @param imageID the new image
+	 */
 	public void setImage(int imageID) {
 		this.imageID = imageID;
 		hasImage = true;
 		invalidate();
 	}
 	
+	/**
+	 * Enable drawing.
+	 * 
+	 * @param drawingEnabled the drawing enabled
+	 */
 	public void enableDrawing(boolean drawingEnabled) {
 		this.drawingEnabled = drawingEnabled;
 	}
 	
-	public void setEarser(boolean eraser) {
+	/**
+	 * Enables the eraser
+	 * 
+	 * @param eraser enable the eraser
+	 */
+	public void setEraser(boolean eraser) {
 		if (eraser) {
 			drawPaint.setColor(Color.WHITE);
 		} else {

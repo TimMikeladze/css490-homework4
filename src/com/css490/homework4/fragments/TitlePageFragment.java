@@ -18,6 +18,12 @@ import com.css490.homework4.R;
 import com.css490.homework4.dialogs.AboutDialog;
 import com.css490.homework4.util.BitmapLoader;
 
+/**
+ * The TitlePageFragment, used to display title page. A Separate fragment is needed for this
+ * page because of the about button and the disabled drawing functionality.
+ * 
+ * @author Tim Mikeladze
+ */
 public class TitlePageFragment extends Fragment implements OnClickListener {
 	
 	private AboutDialog aboutDialog;

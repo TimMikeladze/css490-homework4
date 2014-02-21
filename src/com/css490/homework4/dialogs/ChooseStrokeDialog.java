@@ -9,12 +9,23 @@ import android.content.DialogInterface.OnClickListener;
 import com.css490.homework4.fragments.DrawingCallbacks;
 import com.css490.homework4.view.DrawingStrokes;
 
+/**
+ * A dialog to select the stroke.
+ * 
+ * @author Tim Mikeladze
+ */
 public class ChooseStrokeDialog implements OnClickListener {
 	
 	private static final String TITLE = "Choose a stroke width...";
 	private AlertDialog dialog;
 	private DrawingCallbacks drawingCallbacks;
 	
+	/**
+	 * Instantiates a new choose stroke dialog.
+	 * 
+	 * @param context the context
+	 * @param drawingCallbacks the drawing callbacks
+	 */
 	public ChooseStrokeDialog(final Context context, final DrawingCallbacks drawingCallbacks) {
 		this.drawingCallbacks = drawingCallbacks;
 		
@@ -28,11 +39,17 @@ public class ChooseStrokeDialog implements OnClickListener {
 		dialog.setCancelable(true);
 	}
 	
+	/**
+	 * Show the dialog
+	 */
 	public void show() {
 		dialog.show();
 	}
 	
 	@Override
+	/**
+	 * Select a stroke
+	 */
 	public void onClick(DialogInterface dialog, int which) {
 		switch (which) {
 			case 0:

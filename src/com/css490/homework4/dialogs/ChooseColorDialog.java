@@ -9,12 +9,23 @@ import android.content.DialogInterface.OnClickListener;
 import com.css490.homework4.fragments.DrawingCallbacks;
 import com.css490.homework4.view.DrawingColors;
 
+/**
+ * A dialog to select a color.
+ * 
+ * @author Tim Mikeladze
+ */
 public class ChooseColorDialog implements OnClickListener {
 	
 	private static final String TITLE = "Choose a paint color...";
 	private AlertDialog dialog;
 	private DrawingCallbacks drawingCallbacks;
 	
+	/**
+	 * Instantiates a new choose color dialog.
+	 * 
+	 * @param context the context
+	 * @param drawingCallbacks the drawing callbacks
+	 */
 	public ChooseColorDialog(Context context, DrawingCallbacks drawingCallbacks) {
 		this.drawingCallbacks = drawingCallbacks;
 		
@@ -28,11 +39,17 @@ public class ChooseColorDialog implements OnClickListener {
 		dialog.setCancelable(true);
 	}
 	
+	/**
+	 * Show the dialog
+	 */
 	public void show() {
 		dialog.show();
 	}
 	
 	@Override
+	/**
+	 * Select the color
+	 */
 	public void onClick(DialogInterface dialog, int which) {
 		switch (which) {
 			case 0:
